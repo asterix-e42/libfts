@@ -6,7 +6,7 @@
 #    By: tdumouli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:51:40 by tdumouli          #+#    #+#              #
-#    Updated: 2019/05/22 17:36:38 by tdumouli         ###   ########.fr        #
+#    Updated: 2019/07/15 19:49:37 by tdumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,15 +41,14 @@ MAKE = /usr/bin/make
 LSTDIR=	$(addprefix $(OBJDIR)/, $(LSTDIRI)) \
 
 ifneq ($(NAMEI), )
-all: objdir $(NAMEI)
-	@echo $(GREEN)"compilation reussi"$(NO_COLOR)
+all: $(NAMEI)
 else
-all: objdir
+all: 
 	@$(MAKE) $(NAME)
-	@echo $(GREEN)"compilation reussi cpl"$(NO_COLOR)
+	@echo $(GREEN)"compilation reussi"$(NO_COLOR)
 endif
 
-objdir:
+$(OBJDIR):
 	@if ! [ -d $(OBJDIR) ]; then\
 		mkdir $(OBJDIR) $(LSTDIR);\
 	fi
@@ -58,20 +57,10 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.s
 	$(ASM) $(CFLAGS) $< -o $@
 	@echo $(GREEN)$@" compile"$(NO_COLOR)
 
-$(NAMEI): $(OBJ)
+$(NAMEI): $(OBJDIR) $(OBJ)
 	ar rcs $(NAMEI) $(OBJ)
 	ranlib $(NAMEI)
 	@echo $(GREEN)"library compile"$(NO_COLOR)
-
-$(NAME_NM): $(OBJ_NM)
-	$(MAKE) -C ./libft
-	$(CC) $(OBJ_NM) ./$(LIB) -o $(NAME_NM) $(DEBUG)
-	@echo $(GREEN)$(NAME_NM)" a ete cree"$(NO_COLOR)
-
-$(NAME_OTOOL): $(OBJ_OTOOL)
-	$(MAKE) -C ./libft
-	$(CC) $(OBJ_OTOOL) ./$(LIB) -o $(NAME_OTOOL) $(DEBUG)
-	@echo $(GREEN)$(NAME_OTOOL)" a ete cree"$(NO_COLOR)
 
 clean:
 	@rm -rf $(OBJ)
@@ -97,7 +86,7 @@ auteur:
 	@echo $(GREEN)"le fichier auteur a bien ete cree"$(NO_COLOR)
 
 fclean: clean
-	@rm -f $(NAME_NM) $(NAME_OTOOL)
+	@rm -f $(NAMEI)
 	@echo $(GREEN)"tout est clean"$(NO_COLOR)
 
 re: fclean

@@ -15,7 +15,7 @@ _ft_tolower :
 
 	add rdi, 32
 
-_end
+_end :
 	mov rax, rdi
 	leave
 	ret

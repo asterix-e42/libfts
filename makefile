@@ -6,20 +6,20 @@
 #    By: tdumouli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:51:40 by tdumouli          #+#    #+#              #
-#    Updated: 2019/07/15 19:49:37 by tdumouli         ###   ########.fr        #
+#    Updated: 2019/07/24 15:04:49 by tdumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 AUTEUR = "tdumouli"
 NAMEI = libfts.a
-NAME =
 OBJDIR = objet
 SRCDIR = ./src
 INCDIR = -I./include
 
 
 LIBC = isalpha bzero strcat isdigit isalnum isascii isprint toupper tolower \
-	   strlen memset puts putstr putchar memcpy strdup cat
+	   strlen memset puts putstr putchar memcpy strdup cat putnbr strchr \
+		isspace
 
 OBJ		 =	$(addprefix $(OBJDIR)/ft_, $(addsuffix .o, $(LIBC)))
 
@@ -68,6 +68,7 @@ clean:
 
 ifeq ($(shell find . -type f | grep "\.o"), )
 cleanv:
+	@rm -fr $(OBJDIR)
 	@echo $(GREEN)"les objets sont clean"$(NO_COLOR)
 else
 cleanv:

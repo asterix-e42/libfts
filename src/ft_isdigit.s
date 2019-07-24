@@ -17,6 +17,6 @@ _ft_isdigit :
 
 	mov rax, 1
 
-_end
+_end :
 	leave
 	ret

@@ -4,10 +4,7 @@ section .text
 global	_ft_isalpha
 
 _ft_isalpha :
-	push rbp
-	mov rbp, rsp
-
-	mov rax, 0
+	xor rax, rax
 
 	cmp rdi, 'A'
 	jb _end
@@ -24,6 +21,5 @@ _ft_isalpha :
 _ok :
 	mov rax, 1
 
-_end
-	leave
+_end :
 	ret

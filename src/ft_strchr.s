@@ -1,8 +1,9 @@
 
-section .text
-global	_ft_strlen
 
-_ft_strlen :
+section .text
+global _ft_strchr
+
+_ft_strchr :
 	push rbp
 	mov rbp, rsp
 
@@ -15,14 +16,20 @@ _ft_strlen :
 	not rcx
 	
 	cld
-
 	repne scasb
 
 	not rcx
 	sub rdi, rcx
-	dec rcx
-	mov rax, rcx
 
+	mov ax, si
+	repne scasb
+	mov rax, rdi
+	
+	dec rax
+	mov cl, byte [rax]
+	cmp cx, si
+	je _end
+	xor rax, rax
 
 _end :
 	leave

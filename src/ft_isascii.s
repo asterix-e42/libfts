@@ -17,6 +17,6 @@ _ft_isascii :
 
 	mov rax, 1
 
-_end
+_end :
 	leave
 	ret

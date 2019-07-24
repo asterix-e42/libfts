@@ -6,18 +6,14 @@ global _ft_memset
 _ft_memset :
 	push rbp
 	mov rbp, rsp
+	push rdi
 
-_loop :
-	
-	cmp rdx, 0
-	jbe _end
-
-	dec rdx
 	mov rax, rsi
-	mov byte [rdi + rdx], al
-	jmp _loop
+	mov rcx, rdx
+	cld
+	rep stosb
 
 _end :
-	mov rax, rdi
+	pop rax
 	leave
 	ret

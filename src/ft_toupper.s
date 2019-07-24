@@ -15,7 +15,7 @@ _ft_toupper :
 
 	sub rdi, 32
 
-_end
+_end :
 	mov rax, rdi
 	leave
 	ret

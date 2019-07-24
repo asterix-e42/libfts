@@ -1,6 +1,5 @@
 section .data
-	null_t:
-	.string db "(null)"
+	null_t: db "(null)", 0
 
 section .text
 global _ft_puts
@@ -13,11 +12,10 @@ _ft_puts :
 
 	test rdi, rdi
 	jne _nlr
-	lea rdi, [rel null_t.string]
-;	mov rdx, null_t.len
+	lea rdi, [rel null_t]
 _nlr :
 	call _ft_putstr
-	mov rdi, 0ah
+	mov rdi, 0x0a
 	call _ft_putchar
 
 _end :

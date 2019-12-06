@@ -6,7 +6,7 @@
 /*   By: tdumouli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 14:28:00 by tdumouli          #+#    #+#             */
-/*   Updated: 2019/07/24 16:58:17 by tdumouli         ###   ########.fr       */
+/*   Updated: 2019/12/06 18:00:54 by tdumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,15 @@ int main()
 	memcpy(s2, s2 + 3, 2);
 	printf("ft_memcpy %s\n", s);
 	printf("memcpy    %s\n\n", s2);
+
+	printf("memcmp  --------------\n");
+	printf("ft_memcmp %d\n", ft_memcmp(s, s2, 5));
+	printf("memcmp    %d\n", memcmp(s, s2, 5));
+	printf("ft_memcmp %d\n", ft_memcmp(s + 1, s2, 5));
+	printf("memcmp    %d\n", memcmp(s + 1, s2, 5));
+	printf("ft_memcmp %d\n", ft_memcmp(s + 2, s2, 5));
+	printf("memcmp    %d\n", memcmp(s + 2, s2, 5));
+
 
 	printf("strchr 	--------------\n");
 	for (int i = 0; i < 127; i++)

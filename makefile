@@ -6,7 +6,7 @@
 #    By: tdumouli <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/08 16:51:40 by tdumouli          #+#    #+#              #
-#    Updated: 2019/07/24 15:04:49 by tdumouli         ###   ########.fr        #
+#    Updated: 2019/12/06 17:37:11 by tdumouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INCDIR = -I./include
 
 LIBC = isalpha bzero strcat isdigit isalnum isascii isprint toupper tolower \
 	   strlen memset puts putstr putchar memcpy strdup cat putnbr strchr \
-		isspace
+		isspace memcmp
 
 OBJ		 =	$(addprefix $(OBJDIR)/ft_, $(addsuffix .o, $(LIBC)))
 

@@ -6,7 +6,7 @@
 /*   By: tdumouli <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 19:47:03 by tdumouli          #+#    #+#             */
-/*   Updated: 2019/07/24 17:02:53 by tdumouli         ###   ########.fr       */
+/*   Updated: 2019/12/06 17:43:14 by tdumouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		ft_putstr(char *s);
 void	ft_putnbr(int32_t nb);
 int		ft_puts(char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
+int		ft_memcmp(void *dst, const void *src, size_t n);
 char	*ft_strdup(const char *s1);
 void	ft_cat(int32_t fd);
 char	*ft_strchr(const char *s, int32_t c);

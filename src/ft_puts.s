@@ -1,23 +1,16 @@
-section .data
-	null_t: db "(null)", 0
-
 section .text
-global _ft_puts
-	extern _ft_putstr
-	extern _ft_putchar
+global ft_puts
+	extern ft_putstr
+	extern ft_putchar
 
-_ft_puts :
-	push rbp
-	mov rbp, rsp
-
+ft_puts :
 	test rdi, rdi
 	jne _nlr
-	lea rdi, [rel null_t]
+	ret
 _nlr :
-	call _ft_putstr
+	call ft_putstr
 	mov rdi, 0x0a
-	call _ft_putchar
+	call ft_putchar
 
 _end :
-	leave
 	ret

@@ -1,23 +1,19 @@
 
 
 section .text
-global _ft_strchr
+global ft_strchr
 
-_ft_strchr :
+ft_strchr :
 	push rbp
 	mov rbp, rsp
-
 	xor rax, rax
-
 	cmp rdi, 0
 	je _end
 
 	xor rcx, rcx
 	not rcx
-	
 	cld
 	repne scasb
-
 	not rcx
 	sub rdi, rcx
 

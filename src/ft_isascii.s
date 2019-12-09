@@ -1,9 +1,9 @@
 
 
 section .text
-global	_ft_isascii
+global	ft_isascii
 
-_ft_isascii :
+ft_isascii :
 	push rbp
 	mov rbp, rsp
 

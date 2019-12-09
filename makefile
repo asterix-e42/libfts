@@ -18,7 +18,7 @@ INCDIR = -I./include
 
 
 LIBC = isalpha bzero strcat isdigit isalnum isascii isprint toupper tolower \
-	   strlen memset puts putstr putchar memcpy strdup cat putnbr strchr \
+	   strlen memset puts putstr putchar memcpy cat putnbr strchr \
 		isspace memcmp
 
 OBJ		 =	$(addprefix $(OBJDIR)/ft_, $(addsuffix .o, $(LIBC)))
@@ -35,7 +35,7 @@ GREEN="\x1b[32m"
 YELLOW="\x1b[33m"
 CC = gcc
 ASM = nasm
-CFLAGS = -f macho64 -g
+CFLAGS = -f elf64 -g
 MAKE = /usr/bin/make
 
 LSTDIR=	$(addprefix $(OBJDIR)/, $(LSTDIRI)) \
@@ -59,7 +59,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.s
 
 $(NAMEI): $(OBJDIR) $(OBJ)
 	ar rcs $(NAMEI) $(OBJ)
-	ranlib $(NAMEI)
+#	ranlib $(NAMEI)
 	@echo $(GREEN)"library compile"$(NO_COLOR)
 
 clean:

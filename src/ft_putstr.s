@@ -1,22 +1,14 @@
-
-%define MACH_SYSCALL(n)    0x2000000 | n
-
 section .text
-global	_ft_putstr
-extern	_ft_strlen
+global	ft_putstr
+extern	ft_strlen
 
-_ft_putstr :
-	push rbp
-	mov rbp, rsp
-
-	call _ft_strlen
+ft_putstr :
 	push rdi
-	mov rsi, [rsp]
+	call ft_strlen
+	pop rsi
 	mov rdi, 1
 	mov rdx, rax
-	mov rax, MACH_SYSCALL(4)
+	mov rax, 1
 	syscall
-
-	leave
 	ret
 

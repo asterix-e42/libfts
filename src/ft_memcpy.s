@@ -1,7 +1,7 @@
 section .text
-global	_ft_memcpy
+global	ft_memcpy
 
-_ft_memcpy :
+ft_memcpy :
 	mov rax, rdi
 	mov rcx, rdx
 	cld

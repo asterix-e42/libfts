@@ -1,15 +1,12 @@
-
-%define MACH_SYSCALL(n)    0x2000000 | n
-
 section .data
 	min_int:
 	.str db "-2147483648"
 	.len equ $ - min_int.str
 
 section .text
-global	_ft_putnbr
+global	ft_putnbr
 
-_ft_putnbr :
+ft_putnbr :
 	push rbp
 	mov rbp, rsp
 
@@ -56,7 +53,7 @@ _finish_pos :
 _finish_min :
 	and rsp, -16
 	mov rdi, 1
-	mov rax, MACH_SYSCALL(4)
+	mov rax, 1
 	syscall
 
 	leave

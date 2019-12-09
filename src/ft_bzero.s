@@ -1,19 +1,9 @@
 section .text
-global _ft_bzero
+global ft_bzero
+extern ft_memset
 
-_ft_bzero :
-	push rbp
-	mov rbp, rsp
-
-_loop :
-	
-	cmp rsi, 0
-	je _end
-
-	dec rsi
-	mov byte [rdi + rsi], 0
-	jmp _loop
-
-_end :
-	leave
+ft_bzero :
+	mov rdx, rsi
+	mov rsi, 0
+	call ft_memset
 	ret

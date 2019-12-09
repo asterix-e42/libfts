@@ -1,14 +1,12 @@
 
-%define MACH_SYSCALL(n)    0x2000000 | n
-
 ;;section .bss
 ;;buf:  resb 256
-%define BUF_SIZE           264
+%define BUF_SIZE           256
 
 section .text
-global	_ft_cat
+global	ft_cat
 
-_ft_cat :
+ft_cat :
 	push rbp
 	mov rbp, rsp
 	
@@ -16,11 +14,11 @@ _ft_cat :
 	sub rsp, BUF_SIZE
 
 loop :
-	mov rdi, [rsp + BUF_SIZE]
+	mov rdi, [rbp - 4]
 	mov rsi, rsp
 
 	mov rdx, BUF_SIZE
-	mov rax, MACH_SYSCALL(3)
+	mov rax, 0
 	syscall
 
 	jc _end
@@ -30,13 +28,12 @@ loop :
 	mov rdi, 1
 	mov rsi, rsp
 	mov rdx, rax
-	mov rax, MACH_SYSCALL(4)
+	mov rax, 1
 	syscall
 
 	jc _end
 	jmp loop
 
 _end :
-	mov rax, 0
 	leave
 	ret

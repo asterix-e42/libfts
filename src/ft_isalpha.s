@@ -1,9 +1,9 @@
 
 
 section .text
-global	_ft_isalpha
+global	ft_isalpha
 
-_ft_isalpha :
+ft_isalpha :
 	xor rax, rax
 
 	cmp rdi, 'A'

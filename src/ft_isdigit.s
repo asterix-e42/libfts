@@ -1,9 +1,9 @@
 
 
 section .text
-global	_ft_isdigit
+global	ft_isdigit
 
-_ft_isdigit :
+ft_isdigit :
 	push rbp
 	mov rbp, rsp
 

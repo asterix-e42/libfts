@@ -1,9 +1,9 @@
 
 
 section .text
-global	_ft_toupper
+global	ft_toupper
 
-_ft_toupper :
+ft_toupper :
 	push rbp
 	mov rbp, rsp
 

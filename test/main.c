@@ -28,14 +28,10 @@ int main()
 	char *d2;
 
 	printf("putnbr --------------\n");
+	ft_putnbr(4231);
 	ft_putnbr(-2147483648);
-	ft_puts("\n-2147483648");
-
 	ft_putnbr(2147483647);
-	ft_puts("\n2147483647");
-
 	ft_putnbr(-214742);
-	ft_puts("\n-214742");
 /*	for (int i = 0; i < 122; i++)
 	{
 		ft_putnbr(i);
@@ -52,7 +48,7 @@ int main()
 	s2[2] = s[2] = 'f';
 	s2[3] = s[3] = 'f';
 	ft_bzero(s, 3);
-	ft_bzero(s2, 3);
+	bzero(s2, 3);
 	printf("ft_bzero  %d, %d, %d, %d, %d\n", s[0], s[1], s[2], s[3], s[4]);
 	printf("bzero     %d, %d, %d, %d, %d\n\n", s2[0], s2[1], s2[2], s2[3], s2[4]);
 
@@ -98,61 +94,62 @@ int main()
 
 	printf("strchr 	--------------\n");
 	for (int i = 0; i < 127; i++)
-		if (ft_strchr(si, i) != strchr(si, i))
+		if (!ft_strchr(si, i) != !strchr(si, i))
 			printf("fail strchr : %d  %c\n", i, i);
 	printf("isalpha --------------\n");
 
 	for (int i=1; i < 127; i++)
-		if (ft_isalpha(i) != isalpha(i))
+		if (!ft_isalpha(i) != !isalpha(i))
 			printf("fail isalpha : nb -> %d, ft -> %d, = %d\n", i, ft_isalpha(i), isalpha(i));
 
 	printf("isdigit --------------\n");
 	for (int i=1; i < 127; i++)
-		if (ft_isdigit(i) != isdigit(i))
+		if (!ft_isdigit(i) != !isdigit(i))
 			printf("fail isdigit : nb -> %d, ft -> %d, = %d\n", i, ft_isdigit(i), isdigit(i));
 
 	printf("isalnum --------------\n");
 	for (int i=1; i < 127; i++)
-		if (ft_isalnum(i) != isalnum(i))
+		if (!ft_isalnum(i) != !isalnum(i))
 			printf("fail isalnum : nb -> %d, ft -> %d, = %d\n", i, ft_isalnum(i), isalnum(i));
 
 	printf("isascii --------------\n");
 	for (int i=1; i < 127; i++)
-		if (ft_isspace(i) != isspace(i))
-			printf("fail isascii : nb -> %d, ft -> %d, = %d\n", i, ft_isalnum(i), isalnum(i));
+		if (!ft_isascii(i) != !isascii(i))
+			printf("fail isascii : nb -> %d, ft -> %d, = %d\n", i, ft_isascii(i), isascii(i));
 
 	printf("isprint --------------\n");
 	for (int i=1; i < 127; i++)
-		if (ft_isprint(i) != isprint(i))
+		if (!ft_isprint(i) != !isprint(i))
 			printf("fail isprint : nb -> %d, ft -> %d, = %d\n", i, ft_isprint(i), isprint(i));
 
 	printf("tolower --------------\n");
 	for (int i=1; i < 127; i++)
-		if (ft_tolower(i) != tolower(i))
+		if (!ft_tolower(i) != !tolower(i))
 			printf("fail tolower : nb -> %d, ft -> %d, = %d\n", i, ft_isprint(i), isprint(i));
 
 	printf("toupper --------------\n");
 	for (int i=1; i < 127; i++)
-		if (ft_toupper(i) != toupper(i))
+		if (!ft_toupper(i) != !toupper(i))
 			printf("fail toupper : nb -> %d, ft -> %d, = %d\n", i, ft_isprint(i), isprint(i));
 
 	printf("isspace --------------\n");
 	for (int i=1; i < 127; i++)
-		if (ft_isspace(i) != isspace(i))
+		if (!ft_isspace(i) != !isspace(i))
 			printf("fail isspace : nb -> %d, ft -> %d, = %d\n", i, ft_isspace(i), isspace(i));
 
 	printf("strlen  --------------\n");
 	printf("ft_strlen %zu, %zu, %zu, %zu \n", ft_strlen(si), ft_strlen("fsdfsdga"), ft_strlen(s), ft_strlen(d));
 	printf("strlen    %zu, %zu, %zu, %zu \n\n", strlen(si), strlen("fsdfsdga"), strlen(s), strlen(d));
 
+#if 0
 	printf("strdup  --------------\n");
 	d = ft_strdup("test strdup");
 	d2 = strdup("test strdup");
 	printf("ft_strdup %s\n", d);
 	printf("strdup    %s\n", d2);
-
+#endif
 	printf("puts    --------------\n");
-	puts(NULL);
+	//puts(NULL);
 	ft_puts(NULL);
 	puts("fsd");
 	ft_puts("fds");

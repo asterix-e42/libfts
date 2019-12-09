@@ -1,9 +1,9 @@
 
 
 section .text
-global	_ft_isprint
+global	ft_isprint
 
-_ft_isprint :
+ft_isprint :
 	push rbp
 	mov rbp, rsp
 

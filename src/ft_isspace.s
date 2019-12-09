@@ -1,9 +1,9 @@
 
 
 section .text
-global	_ft_isspace
+global	ft_isspace
 
-_ft_isspace :
+ft_isspace :
 	push rbp
 	mov rbp, rsp
 

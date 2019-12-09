@@ -1,20 +1,20 @@
 
 
 section .text
-global _ft_isalnum
-	extern _ft_isalpha
-	extern _ft_isdigit
+global ft_isalnum
+	extern ft_isalpha
+	extern ft_isdigit
 
-_ft_isalnum :
+ft_isalnum :
 	push rbp
 	mov rbp, rsp
 
-	call _ft_isdigit
+	call ft_isdigit
 
 	cmp rax, 1
 	je _end
 
-	call _ft_isalpha
+	call ft_isalpha
 
 _end :
 	leave

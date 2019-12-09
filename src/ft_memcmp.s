@@ -1,7 +1,7 @@
 section .text
-global  _ft_memcmp
+global  ft_memcmp
 
-_ft_memcmp :
+ft_memcmp :
 	xor rax, rax
 	test rdx, rdx
 	je .ret

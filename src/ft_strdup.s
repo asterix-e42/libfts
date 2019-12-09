@@ -1,23 +1,23 @@
 
 
 section .text
-global	_ft_strdup
-extern	_malloc
-extern	_ft_strlen
+global	ft_strdup
+extern	malloc
+extern	ft_strlen
 
-_ft_strdup :
+ft_strdup :
 	push rbp
 	mov rbp, rsp
 	sub rsp, 0x10
 
 	mov [rsp + 8], rdi ; source
-	call _ft_strlen
+	call ft_strlen
 
 	mov [rsp], rax ; len
 	mov rdi, rax
 	inc rdi
 
-	call _malloc
+	call malloc
 	test rax, rax
 	je _end 
 	

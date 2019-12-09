@@ -1,9 +1,9 @@
 
 
 section .text
-global	_ft_tolower
+global	ft_tolower
 
-_ft_tolower :
+ft_tolower :
 	push rbp
 	mov rbp, rsp
 

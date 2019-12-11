@@ -29,10 +29,10 @@ debugg =
 ############################## normaly no change ###############################
 
 
-NO_COLOR="\x1b[39m"
-RED="\x1b[31m"
-GREEN="\x1b[32m"
-YELLOW="\x1b[33m"
+NO_COLOR=""
+RED="PROBLEME :"
+GREEN="OK :"
+YELLOW="?? :"
 CC = gcc
 ASM = nasm
 CFLAGS = -f elf64 -g
